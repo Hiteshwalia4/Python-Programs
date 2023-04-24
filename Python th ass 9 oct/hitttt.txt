@@ -1,0 +1,133 @@
+[7:12 PM, 10/16/2020] Sajal: # Question 1
+num = input().split()
+m = int(num[0])
+n = int(num[1])
+
+storage = list()
+happiness = 0
+
+storage = list(map(int, input().strip().split()))
+
+A = set(map(int, input().strip().split()))
+B = set(map(int, input().strip().split()))
+
+for i in storage:
+    if i in A:
+        count = happiness + 1
+    if i in B:
+        count = happiness - 1
+
+print(happiness)
+[7:12 PM, 10/16/2020] Sajal: def sum_list(n:"int,size of list", l:"list of integers"):
+    """ Function to calculate sum of elements of list
+        and leaving the  numbers between 6 and 7 in list. """
+    s = 0
+    check = 0
+    flag = True
+    for i in range(0,n):
+        if(l[i] == 6):
+            check = 1 
+            flag = False
+        if(flag == True):
+            s += l[i]
+        if(l[i] == 7):
+            if(check == 1):
+                check += 1
+            flag = True
+    if(check >= 2 or check == 0):
+        print("\nSum: ",s)
+    else:
+        print("\nAfter every 6 there must be a 7")
+
+def input_list():
+    n = int(input("\nEnter no. of elements in list: "))
+    print("Enter",n,"integers in list: ")
+    l = []
+    for i in range(0,n):
+        el = int(input("Enter element: "))
+        l.append(el)
+    sum_list(n,l)
+
+input_list()
+[7:12 PM, 10/16/2020] Sajal: # Question 2
+
+def sort_string(s):
+    lower_case = []
+    upper_case = []
+    odd_digits = []
+    even_digits = []
+    for char in s:
+        if char.islower():
+            lower_case.append(char)
+        elif char.isupper():
+            upper_case.append(char)
+        elif char.isdigit():
+            if int(char) % 2 == 0:
+                even_digits.append(char)
+            else:
+                odd_digits.append(char)
+    return ''.join(sorted(lower_case) + sorted(upper_case) + sorted(odd_digits) + sorted(even_digits))
+
+
+S = input()
+print(sort_string(S))
+[7:12 PM, 10/16/2020] Sajal: # question 5
+def arrange_list(n:"int", l:"list"):
+    """ Function to arrange elements of list at odd position in ascending order
+        and even position elements in descending order. """
+    l1 = []
+    l2 = []
+    for i in range(0,n):
+        if(i%2 == 0):
+            l2.append(l[i])
+            l2.sort(reverse = True)
+        else:
+            l1.append(l[i])
+            l1.sort()
+    l = []
+    j = 0
+    k = 0
+    for i in range(0,n):
+        if(i%2 == 0):
+            l.append(l2[j])
+            j += 1
+        else:
+            l.append(l1[k])
+            k += 1
+    print("\nList is: ",l)
+
+    
+def input_list():
+    """ Function to input a list """
+    n = int(input("Enter no. of elements in the list: "))
+    l = []
+    for j in range(0,n):
+        el …
+[7:12 PM, 10/16/2020] Sajal: # question 4
+def list_to_dict(n:"int", m:"int", l:"list of list"):
+    """ Function to convert a list of lists into a dictionary with
+        elements of first sublist as keys """
+    d = {}
+    j = 0
+    for i in range(0,m):
+        d[l[0][i]] = [l[k][j] for k in range(1,n)]
+        j += 1
+    print("\nDictionary is: ",d)
+
+    
+def input_list():
+    """ Function to input a list of lists """
+    l = []
+    n = int(input("\nEnter no. of lists in the list: "))
+    m = int(input("Enter no. of elements in sublist: "))
+    for i in range(0,n):
+        l2 = []
+        print("Enter",m,"integers in sublist",i+1,": ")
+        for j in range(0,m):
+            el = int(input("Enter element: "))
+            l2.append(el)
+        l.append(l2)
+    list_to_dict(n,m,l)
+
+
+input_list()
