@@ -1,4 +1,4 @@
-[7:12 PM, 10/16/2020] Sajal: # Question 1
+# Question 1
 num = input().split()
 m = int(num[0])
 n = int(num[1])
@@ -18,7 +18,7 @@ for i in storage:
         count = happiness - 1
 
 print(happiness)
-[7:12 PM, 10/16/2020] Sajal: def sum_list(n:"int,size of list", l:"list of integers"):
+def sum_list(n:"int,size of list", l:"list of integers"):
     """ Function to calculate sum of elements of list
         and leaving the  numbers between 6 and 7 in list. """
     s = 0
@@ -49,8 +49,9 @@ def input_list():
     sum_list(n,l)
 
 input_list()
-[7:12 PM, 10/16/2020] Sajal: # Question 2
 
+
+# Question 2
 def sort_string(s):
     lower_case = []
     upper_case = []
@@ -71,7 +72,9 @@ def sort_string(s):
 
 S = input()
 print(sort_string(S))
-[7:12 PM, 10/16/2020] Sajal: # question 5
+
+
+# question 5
 def arrange_list(n:"int", l:"list"):
     """ Function to arrange elements of list at odd position in ascending order
         and even position elements in descending order. """
@@ -103,7 +106,8 @@ def input_list():
     l = []
     for j in range(0,n):
         el …
-[7:12 PM, 10/16/2020] Sajal: # question 4
+
+# question 4
 def list_to_dict(n:"int", m:"int", l:"list of list"):
     """ Function to convert a list of lists into a dictionary with
         elements of first sublist as keys """
